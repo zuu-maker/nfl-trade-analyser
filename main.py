@@ -38,7 +38,7 @@ loaded_scaler = joblib.load(filename_scaler)
 @app.post("/predict", tags=["predictions"])
 async def predict_emotion(features: Features):
     squad1 = np.array(features.team1)
-    squad2 = np.array(features.team1)
+    squad2 = np.array(features.team2)
 
     if squad1.ndim != 2:
         return {
